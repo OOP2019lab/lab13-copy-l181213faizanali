@@ -1,0 +1,132 @@
+#include<iostream>
+using namespace std;
+//template <typename T1>///For 1(A)
+//T1 GetMax(T1 x,T1 y)
+//{
+//if(x>y)
+//	return x;
+//else
+//	return y;
+//} 
+//template <typename T2>///For 1(A)
+//T2 GetMin(T2 x,T2 y)
+//{
+//if(x<y)
+//	return x;
+//else
+//	return y;
+//}
+//template <typename T3,typename T4>///For 1(c)
+//T3 GetMax(T3 x,T4 y)
+//{
+//if(x>y)
+//	return x;
+//else
+//	return y;
+//} 
+//template <typename T5,typename T6>
+//T5 GetMin(T5 x,T6 y)
+//{
+//if(x<y)
+//	return x;
+//else
+//	return y;
+//}
+template <typename T7>
+class Pair
+{
+	T7 values[2];
+public:
+	Pair::Pair(T7 x,T7 y)
+	{
+		values[0]=x;
+		values[1]=y;
+	}
+
+	T7 Pair::GetMax()
+	{
+		if(values[0]>values[1])
+			return values[0];
+		else
+			return values[1];
+	}
+	T7 Pair::GetMin();
+	friend ostream &operator<<(ostream& out,const Pair<T7> &x)
+	{
+		out<<x.values[0]<<","<<x.values[1];
+		return out;
+	}
+};
+
+
+
+template<typename T8>
+T8 Pair<T8>::GetMin()
+{
+if(values[0]<values[1])
+	return values[0];
+else
+	return values[1];
+}
+
+
+// ////exercise 1b////
+//int main () 
+//{
+//  int i=5, j=6, k;
+//  long l=10, m=5, n;
+//  k=GetMax<int>(i,j);
+//  n=GetMin<long>(l,m);
+//  cout << k << endl;
+//  cout << n << endl;
+//  return 0;
+//}
+///////exercise 1c/////
+//int main () 
+//{
+//  int i=5, j=6, k;
+//  long l=10, m=5, n;
+//  k=GetMax(i,j);
+//  n=GetMin(l,m);
+//  cout << k << endl;
+//  cout << n << endl;
+//system("pause");
+//return 0;
+//}
+//
+// /////exercise 1d/////
+//int main () 
+//{
+//  char i='Z';
+//  int  j=6, k;
+//  long l=10, m=5, n;
+//  k=GetMax<int,long>(i,m);
+//  n=GetMin<int,char>(j,l);
+//  cout << k << endl;
+//  cout << n << endl;
+//  system("pause");
+//  return 0;
+//}
+/////exercse 1e////
+//int main () 
+//{
+//  char i='Z';
+//  int  j=6, k;
+//  long l=10, m=5, n;
+//  k=GetMax(i,m);
+//  n=GetMin(j,l);
+//  cout << k << endl;
+//  cout << n << endl;
+//  system("pause");
+//  return 0;
+//}
+//
+
+int main () 
+{
+	Pair <double> myobject (1.012, 1.01234);
+	cout<<myobject.GetMax()<<endl;
+	cout<<myobject.GetMin()<<endl;
+	cout<<myobject<<endl; // << operator in pairs should be overloaded (inline)
+	return 0;
+}
